@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
@@ -38,10 +39,12 @@ useEffect(()=>{
     const navitme = (
         <>
             <li>
-                <a href='/'>Home</a>
+                <Link to={"/"}>
+                
+                home</Link>
             </li>
             <li>
-                <a href='/Course'>Course</a>
+                <Link to={"/Course"}>Course</Link>
             </li>
             <li>
                 <a >Contact</a>
