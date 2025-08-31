@@ -3,6 +3,7 @@ import Navbar from '../Component/Navbar'
 import Course from '../Component/Course'
 import Footer from '../Component/Footer'
 
+
 function Courses() {
    
   return (
@@ -11,6 +12,7 @@ function Courses() {
      <div className='min-h-screen'>
         <Course/>
      </div>
+        
       <Footer/>
    </>
   )

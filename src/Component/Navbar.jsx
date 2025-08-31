@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import Login from './Login';
 
 function Navbar() {
 
@@ -47,7 +48,7 @@ useEffect(()=>{
                 <Link to={"/Course"}>Course</Link>
             </li>
             <li>
-                <a >Contact</a>
+                <Link to={"/Contact"}>Contact</Link>
             </li>
             <li>
                 <a >About</a>
@@ -133,7 +134,11 @@ useEffect(()=>{
                             </svg>
                         </label>
                         <div className="">
-                            <a className="bg-black text-white px-2.5 py-1 rounded-md cursor-pointer hover:bg-slate-800 duration-300">Login</a>
+                            <a className="bg-black text-white px-2.5 py-1 rounded-md cursor-pointer hover:bg-slate-800 duration-300"
+                              onClick={()=>document.getElementById('my_modal_3').showModal()}>Login
+                              
+                              </a>
+                             <Login/>
                         </div>
                     </div>
                 </div>
