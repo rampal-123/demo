@@ -8,7 +8,31 @@ function Login() {
     handleSubmit,
    formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) =>{ 
+        const userInfo=
+        {
+       
+        email:data.email,
+        password:data.password
+    }
+   await axios.post("http://localhost:4002/user/login",userInfo)
+    .then((res)=>
+    {
+        console.log(res.data)
+        if(res.data)
+        {
+            alert("login successfuly")
+        }
+        localStorage.setItem("Users",JSON.stringify(res.data.user));
+    })
+    .catch((err)=>
+    {
+        if(err.response){
+            console.log(err);
+            alert("Error:"+err.response.data.massage);
+        }
+    })
+  }
   return (
     <div>
         <dialog id="my_modal_3" className="modal">
